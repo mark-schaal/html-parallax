@@ -1,0 +1,103 @@
+	div, span, applet, object, iframe,
+	h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+	a, abbr, acronym, address, big, cite, code,
+	del, dfn, em, img, ins, kbd, q, s, samp,
+	small, strike, strong, sub, sup, tt, var,
+	b, u, i, center,
+	dl, dt, dd, ol, ul, li,
+	fieldset, form, label, legend,
+	table, caption, tbody, tfoot, thead, tr, th, td,
+	article, aside, canvas, details, embed, 
+	figure, figcaption, footer, header, hgroup, 
+	menu, nav, output, ruby, section, summary,
+	time, mark, audio, video {
+		font-size: 1.4rem;
+	}
+	ul.unstyled{
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+	}
+	ul.unstyled li{
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+	}
+
+	ul.inline{
+		display: block;
+	}
+	ul.inline li{
+		margin-right: 1em;
+		display: inline-block;
+	}
+
+	/* Chrome, Safari, Opera */ 
+	@-webkit-keyframes stickyHeader {
+		from {top: -53px;}
+		to {top: 0;}
+	} 
+
+	/* Standard syntax */ 
+	@keyframes stickyHeader {
+		from {top: -53px;}
+		to {top: 0;}
+	}
+
+	body,html{
+		font-size: 10px;
+	}
+	.header{
+		padding: 2rem 5%;
+		display: block;
+		background-color: #fff;
+		width: 90%;
+		transition: background-color 1s ease-in-out;
+	}
+	.header::after{
+		content: "";
+		display: block;
+		height: 0;
+		width: 0;
+		visibility: hidden;
+		clear: both;
+	}
+	.header h1{
+		float: left;
+		font-family: Arial, sans-serif;
+		font-size: 2.4rem;
+		line-height: 1em;
+		color: #333;
+		transition: color 1s ease-in-out;
+	}
+	.header.scroll-before{
+		position: fixed;
+		top: 0;
+		z-index: 1000;
+		color: #fff;
+		background-color: rgba(0,0,0,.25);
+		-webkit-animation: stickyHeader 1s alternate forwards; /* Chrome, Safari, Opera */ 
+		animation: stickyHeader 1s alternate forwards;
+	}
+	.header.scroll-before h1{
+		color: #fff;
+	}
+	#primary-nav{
+		float: right;
+	}
+	#primary-nav ul li a{
+		line-height: 2.4rem;
+	}
+	.footer{
+		padding: 1em 5%;
+		display: block;
+		width: 90%;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		background: rgba(0,0,0,.25);
+	}
+	.footer h5{
+		font-family: Arial, sans-serif;
+		color: #fff;
+	}
